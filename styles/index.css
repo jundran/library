@@ -1,0 +1,93 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+.container {
+  margin: 32px auto;
+  max-width: fit-content;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  margin-bottom: 32px;
+  padding: 4px;
+}
+
+table {
+  min-width: min(700px, 90vw);
+  border-collapse: collapse;
+  border: 2px solid #0369A1;
+  letter-spacing: 1px;
+}
+table caption {
+  margin: 16px 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+table th, table td {
+  border: 1px solid #0369A1;
+  padding: 10px 20px;
+  text-align: center;
+}
+table th {
+  background: #0C4A6E;
+  color: #fff;
+  font-weight: 700;
+}
+table tr:nth-child(even) {
+  background-color: #F0F9FF;
+}
+table tr:nth-child(odd) {
+  background-color: #E0F2FE;
+}
+table button {
+  padding: 2px 8px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  border-radius: 1px;
+  font-size: inherit;
+}
+table button:hover {
+  color: #0369A1;
+}
+
+#show-form-button {
+  margin-bottom: 16px;
+}
+
+.form-button {
+  border: none;
+  border-radius: 5px;
+  padding: 8px 24px;
+  background-color: #0369A1;
+  color: #fff;
+  font-weight: 700;
+}
+
+li {
+  display: grid;
+  grid-template-columns: 150px 250px;
+  margin-bottom: 16px;
+}
+li input[type=checkbox] {
+  justify-self: flex-start;
+}
+
+@media (max-width: 700px) {
+  #show-form-button {
+    margin-left: 32px;
+  }
+}
+@media (max-width: 500px) {
+  li {
+    grid-template-columns: 90%;
+  }
+  li:last-child {
+    grid-template-columns: max-content auto;
+    gap: 16px;
+  }
+}
+
+/*# sourceMappingURL=index.css.map */

@@ -1,0 +1,85 @@
+$sky50: #F0F9FF
+$sky100: #E0F2FE
+$sky200: #BAE6FD
+$sky300: #7DD3FC
+$sky400: #38BDF8
+$sky500: #0EA5E9
+$sky600: #0284C7
+$sky700: #0369A1
+$sky800: #075985
+$sky900: #0C4A6E
+
+$border-colour: $sky700
+
+body
+  margin: 0
+  font-family: sans-serif
+
+.container
+  margin: 32px auto
+  max-width: fit-content
+
+.table-wrapper
+  overflow-x: auto
+  margin-bottom: 32px
+  padding: 4px
+
+table
+  min-width: min(700px, 90vw)
+  border-collapse: collapse
+  border: 2px solid $border-colour
+  letter-spacing: 1px
+  caption
+    margin: 16px 0
+    font-size: 1.2rem
+    font-weight: 700
+  th, td
+    border: 1px solid $border-colour
+    padding: 10px 20px
+    text-align: center
+  th
+    background: $sky900
+    color: #fff
+    font-weight: 700
+  tr:nth-child(even)
+    background-color: $sky50
+  tr:nth-child(odd)
+    background-color: $sky100
+  button
+    padding: 2px 8px
+    border: none
+    background: transparent
+    cursor: pointer
+    border-radius: 1px
+    font-size: inherit
+    &:hover
+      color: $border-colour
+
+#show-form-button
+  margin-bottom: 16px
+
+.form-button
+  border: none
+  border-radius: 5px
+  padding: 8px 24px
+  background-color: $border-colour
+  color: #fff
+  font-weight: 700
+
+li
+  display: grid
+  grid-template-columns: 150px 250px
+  margin-bottom: 16px
+  input[type="checkbox"]
+    justify-self: flex-start
+
+@media(max-width: 700px)
+  #show-form-button
+    margin-left: 32px
+
+@media(max-width: 500px)
+  li
+    grid-template-columns: 90%
+  li:last-child
+    grid-template-columns: max-content auto
+    gap: 16px
