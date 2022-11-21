@@ -6,12 +6,12 @@ body {
 .container {
   margin: 32px auto;
   max-width: fit-content;
+  padding: 4px;
 }
 
 .table-wrapper {
   overflow-x: auto;
   margin-bottom: 32px;
-  padding: 4px;
 }
 
 table {

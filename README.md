@@ -4,7 +4,7 @@
 https://jundran.github.io/library/
 
 ## Description
-TOP - Library Project
+TOP - Library project
 
 ## Project Requirements
 https://www.theodinproject.com/lessons/node-path-javascript-library
