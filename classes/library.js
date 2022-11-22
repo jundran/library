@@ -1,17 +1,15 @@
-export default class Library {
-  constructor() {
-    this.library = []
-  }
+export default function Library() {
+  let library = []
 
-  add(book) {
-    this.library.push(book)
-  }
+  const add = book => library.push(book)
 
-  getAllBooks() {
-    return this.library
-  }
+  const getAllBooks = () => library
 
-  delete(book) {
-    this.library = this.library.filter(b => b.id !== book.id)
+  const deleteBook = book => library = library.filter(b => b.id !== book.id)
+
+  return {
+    add,
+    getAllBooks,
+    deleteBook
   }
 }

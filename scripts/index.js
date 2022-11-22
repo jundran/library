@@ -1,5 +1,5 @@
 "use strict"
-import handleResize from "./handleResize.js"
+import handleResize from "./resize.js"
 import printBook, { printAllBooks } from "../scripts/render.js"
 import Book from "../classes/book.js"
 import Library from "../classes/library.js"
@@ -13,9 +13,9 @@ document.getElementById("show-form-button").addEventListener("click", handleShow
 form.addEventListener("input", handleFormValidation)
 form.addEventListener("submit", handleSubmit)
 
-// EVENT LISTNER FUNCTIONS
+// EVENT LISTENER FUNCTIONS
 function handleShowForm(e) {
-  if(e.target.textContent === "Add book") {
+  if(e.target.textContent === "New book") {
     form.style = "display: block"
     e.target.textContent = "Hide form"
     // Scroll so button is 100px from the top of the viewport (if page is long enough)
@@ -23,7 +23,7 @@ function handleShowForm(e) {
   }
   else {
     form.style = "display: none"
-    e.target.textContent = "Add book"
+    e.target.textContent = "New book"
   }
 }
 

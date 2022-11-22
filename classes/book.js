@@ -1,17 +1,21 @@
-export default class Book {
-  constructor(title, author, numPages, isRead) {
-    this.title = title
-    this.author = author
-    this.numPages = numPages
-    this.isRead = isRead
-    this.id = self.crypto.randomUUID()
-  }
+export default function Book (_title, _author, _numPages, _isRead) {
+  let title = _title
+  let author = _author
+  let numPages = _numPages
+  let isRead = _isRead
+  let id = self.crypto.randomUUID()
 
-  getProperties() {
-    return [this.title, this.author, this.numPages, this.isRead]
-  }
+  const displayProperties = [title, author, numPages, isRead]
 
-  setIsRead(e) {
-    this.isRead = e.target.checked
+  const setIsRead = e => isRead = e.target.checked
+
+  return {
+    title,
+    author,
+    numPages,
+    isRead,
+    id,
+    displayProperties,
+    setIsRead
   }
 }

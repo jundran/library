@@ -1,11 +1,10 @@
 "use strict"
-const tableBody = document.querySelector('tbody')
 
 export default function printBook(book, myLibrary) {
   const row = document.createElement("tr")
 
   // Create and append TD elements for text fields and checkbox(isRead)
-  book.getProperties().forEach(field => {
+  book.displayProperties.forEach(field => {
     const td = document.createElement("td")
     setPaddingAndFontSize(td)
 
@@ -27,7 +26,7 @@ export default function printBook(book, myLibrary) {
   const deleteButton = document.createElement("Button")
   deleteButton.textContent = "Delete"
   deleteButton.addEventListener("click", () => {
-    myLibrary.delete(book)
+    myLibrary.deleteBook(book)
     printAllBooks(myLibrary)
   })
 
@@ -38,17 +37,17 @@ export default function printBook(book, myLibrary) {
   row.appendChild(td)
 
   // Finally append this row to the table body
-  tableBody.appendChild(row)
+  document.querySelector('tbody').appendChild(row)
+
+  function setPaddingAndFontSize(td) {
+    const referenceCell = document.querySelector("th")
+      td.style.fontSize = referenceCell.style.fontSize
+      td.style.paddingLeft = referenceCell.style.paddingLeft
+      td.style.paddingRight = referenceCell.style.paddingRight
+  }
 }
 
 export function printAllBooks(myLibrary) {
-  tableBody.innerHTML = ""
+  document.querySelector('tbody').innerHTML = ""
   myLibrary.getAllBooks().forEach(book => printBook(book, myLibrary))
-}
-
-function setPaddingAndFontSize(td) {
-  const referenceCell = document.querySelector("th")
-    td.style.fontSize = referenceCell.style.fontSize
-    td.style.paddingLeft = referenceCell.style.paddingLeft
-    td.style.paddingRight = referenceCell.style.paddingRight
 }
